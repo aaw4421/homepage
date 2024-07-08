@@ -7,7 +7,7 @@ html {
 body {
   background-color: black;
   background-image: url("/assets/stars.gif");
-  max-width:850px;
+  width: min(100%, 850px);
   margin: auto;
   color: white;
   font-family: "IBM Plex Mono", monospace;
@@ -44,6 +44,9 @@ a:link, a:visited {
 }
 #navbar a {
   text-decoration: none;
+}
+a.osu-nav {
+  color: hotpink;
 }
 
 #navbar {
