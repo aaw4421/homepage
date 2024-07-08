@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+html {
+  font-size: 18px;
+}
+
+body {
+  background-color: black;
+  background-image: url("/assets/stars.gif");
+  max-width:850px;
+  margin: auto;
+  color: white;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+#welcome {
+  text-align: center;
+  margin: 0;
+  padding-top: 20px;
+}
+
+#page {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-left: white 1px solid;
+  border-right: white 1px solid;
+  position: relative;
+  min-height: 100vh;
+}
+
+#header {
+  border-bottom: 1px gray dashed
+}
+
+#navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0px;
+}
+
+a:link, a:visited {
+  color: skyblue;
+  text-decoration: none;
+}
+#navbar a {
+  text-decoration: none;
+}
+
+#navbar {
+  list-style-type: none;
+}
+
+#navbar>li {
+  display: inline;
+}
+
+#meat-container {
+  padding: 5px 30px;
+}
+
+#footer {
+  color: gray;
+  font-size: 0.6rem;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  border-top: 1px gray dashed;
+}
+
+img[onclick]:hover {
+  cursor: pointer;
+}
+
+.gray-indent {
+  border-left: 2px rgba(64, 64, 64, 0.75) dashed;
+  padding-left: 25px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.center-text {
+  text-align: center;
+}

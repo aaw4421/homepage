@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>adam's links</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <base target="_blank">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <style>
+      #cat {
+        /* float: right; */
+        clip-path: circle();
+        opacity: 0;
+        transition: opacity 0.3s ease-out;
+        display: inline;
+        height: 1em;
+        position: relative;
+        top: 0.18em
+      }#cat:hover {
+        opacity: 0.5
+      }
+    </style>
+</head>
+<body>
+    <div id="page">
+          <div id="header">
+            <h1 id="welcome">adam's list of links</h1>
+
+            <ul id="navbar">...</ul>
+          </div>
+  
+          <div id="meat-container">
+            <div class="links-section">
+              <h2 style="margin-bottom: 0px">friends</h2>
+              <div style="color:gray;font-size: 75%;">work in progress...</div>
+              <ul class="link-list">
+                <li><a target="_blank" href="https://osu.ppy.sh/users/7476493">aidan</a></li>
+                <li><a target="_blank" href="https://www.youtube.com/channel/UCS0ngtpOF371CMFpDWV8bIg">rutsy</a> <img id="cat" src="/assets/catjammin.gif"/></li>
+                <li><a target="_blank" href="https://backloggd.com/u/dtm/">dtm</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 style="margin-bottom: 0px">random cool stuffs</h2>
+              <div style="color:gray;font-size: 75%;">work in progress...</div>
+
+              <ul class="link-list">
+                <li><a href="https://paxcallow.neocities.org/">callow station</a></li>
+                <li><a href="https://bytemoth.neocities.org/getlinks/browsers">zero-bullshit web browsing</a></li>
+              </ul>
+            </div>
+          </div>
+      </div>
+      <script src="/navbar.js"></script>
+</body>
+</html>

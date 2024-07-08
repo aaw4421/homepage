@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>adam's osu stuff</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <base target="_blank">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+      function expandContent(b) {
+        var contentEl = b.nextElementSibling.nextElementSibling;
+        switch(contentEl.style.display) {
+          case "none": case "":
+            contentEl.style.display = "block";
+            break;
+          default:
+            contentEl.style.display = "none";
+        }
+      }
+
+      function copyLocation(id) {
+        var part1 = window.location.href.split("#")[0];
+
+        var result = part1 + "#" + id;
+        navigator.clipboard.writeText(result);
+      }
+    </script>
+    <style>
+        #osu-lead ul {
+            padding: 0px;
+            padding-top: 10px;
+            width: 50%;
+            margin: auto;
+            text-align: center
+        } #osu-lead li {
+            padding-bottom: 10px
+        }
+        .ellipsis {
+            text-align: center;
+            color: gray
+        }
+        p {
+            text-align: center;
+        }
+        .osu-post {
+          display: grid;
+          grid-template-columns: auto 4em 7em;
+          gap: 8px;
+          grid-row: auto auto;
+        }
+        .osu-post-title {
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .osu-post-content {
+          display: none;
+        }
+        .osu-post-button {
+          background: none;
+          border: none;
+          height: fit-content;
+          width: fit-content;
+          margin: auto;
+
+          color: skyblue;
+          font-family: inherit;
+          cursor: pointer;
+        } .osu-post-button::before,.osu-post-button::after {
+          color: white;
+        }.osu-post-button::before {
+          content: "["
+        } .osu-post-button::after {
+          content: "]"
+        }
+    </style>
+  </head>
+  <body>
+    <div id="page">
+        <div id="header">
+          <h1 id="welcome">adam's osu stuff</h1>
+          <ul id="navbar">...</ul>
+        </div>
+
+        <div id="meat-container">
+          <div id="osu-lead">
+            <ul style="list-style-type: none;">
+                <li><img src="https://raw.githubusercontent.com/ppy/osu/master/assets/lazer.png" width="64px"></li>
+                <li><a href="https://osu.ppy.sh/users/4349974">user page</a></li>
+                <li><a href="/osu/staffing/">tourney staffing history</a></li>
+            </ul>
+          </div>
+          <div class="ellipsis">...</div>
+
+          <p>&#x26A0; WORK IN PROGRESS &#x26A0;</p>
+          <p><small>Along with my own personal information, I'd like to put guides here about streaming, reffing, and other technical aspects of osu! to serve as a reference for people, especially for tricks I've developed or problems people commonly have.</small></p>
+        
+          <div class="ellipsis">...</div>
+          <div id="osu-posts-container">
+            <h2 style="text-align: center">Guides</h2>
+            <div class="osu-post" id="osu!tourney_OBS_audio_passthrough">
+              <h3 class="osu-post-title">osu!tourney OBS audio passthrough</h3>
+              <button onclick="expandContent(this)" class="osu-post-button osu-post-show">show</button>
+              <button onclick="copyLocation(this.parentNode.id)" class="osu-post-button osu-post-copy">copy link</button>
+
+              <div class="osu-post-content">
+                Lorem<br>ipsum<br>dolor
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <script src="/navbar.js"></script>
+  </body>
+</html>
