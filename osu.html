@@ -77,6 +77,10 @@
           content: "]"
         }
 
+        #milestones {
+          color: gray;
+          font-size: 90%
+        }
         .play-milestone {
           color: darkgoldenrod
         }
@@ -98,17 +102,17 @@
                 <li><a href="https://osu.ppy.sh"><img src="https://raw.githubusercontent.com/ppy/osu/master/assets/lazer.png" width="64px"></a></li>
                 <li><a href="https://osu.ppy.sh/users/4349974">user page</a></li>
                 <li><a href="/osu-staffing">tourney staffing history</a></li>
-                <li><a target="_self" href="#Guides">guides</a></li>
+                <!-- <li><a target="_self" href="#guides">guides</a></li> -->
             </ul>
           </div>
           <div class="ellipsis">...</div>
 
           <p>i am an osu!standard player since 2014, now mostly a tournament streamer and sometimes player -- I also manage the osu! team/club at RIT</p>
-          <ul style="font-size: 90%">
+          <ul id="milestones">
             <li>2014/05/03: account created @ 23:48:26 (UTC); rank 1 was rrtyui</li>
             <li>2015/10/28: <a class="play-milestone">100pp play</a> - <a href="https://osu.ppy.sh/beatmapsets/79116#osu/221948">Hoshizora no Ima [Insane]</a></li>
             <li>2016/01/31: 3,000 total pp</li>
-            <li>2016/02/03: <a class="play-milestone">200pp play</a> + top 20k rank - <a href="https://osu.ppy.sh/beatmapsets/313330#osu/699471">Watashi, Shuyaku no Akaza Akari Desu [Akariiin~!]</a></li>
+            <li>2016/02/03: <a class="play-milestone">200pp play</a> - <a href="https://osu.ppy.sh/beatmapsets/313330#osu/699471">Watashi, Shuyaku no Akaza Akari Desu [Akariiin~!]</a></li>
             <li>2016/04/21: top 10k, 4,000 total pp</li>
             <li>2016/07/09: <a href="https://osu.ppy.sh/scores/373828856" class="play-milestone">300pp play</a> - <a href="https://osu.ppy.sh/beatmapsets/357466#osu/787430">Future Son [N A S Y A'S OK DAD]</a> +DT</li>
             <li>2016/07/20: top 5k rank, 5,000 total pp</li>
@@ -116,21 +120,21 @@
             <li>2016/12/22: top 2k rank</li>
             <li>2017/08/11: <a href="/assets/osu/bestfriends.png" class="play-milestone">400pp play</a> - <a href="https://osu.ppy.sh/beatmapsets/249939#osu/574471">Best FriendS [Insane]</a> +HDDT</li>
             <li>2017/12/21: 7,000 total pp</li>
-            <li>2018/07/14: top 1k rank, 8,000 total pp, peak rank</li>
+            <li>2018/07/14: <a href="/assets/osu/FalselyRestrictedFor1Year2Months.png" style="color:inherit">top 1k rank, 8,000 total pp, peak rank</a></li>
             <li>2019/07/04: <a href="https://osu.ppy.sh/scores/783847301" class="play-milestone">500pp play</a> <a href="https://www.youtube.com/watch?v=sCQI4R7Fwjw">(video)</a> - <a href="https://osu.ppy.sh/beatmapsets/728276#osu/1537566">Sidetracked Day [THREE DIMENSIONS]</a></li>
           </ul>
-          <p>peak rank: #964</p>
+          <p>peak rank: #964 @ 8,105pp</p>
           <a href="https://osu.ppy.sh/users/4349974#historical"><img src="/assets/osu/playhistory-july2024.png" width="75%" style="display: block; margin: auto"></a>
           <div class="ellipsis">...</div>
 
-          <div id="Guides">
+          <div id="guides">
             <h2 style="text-align: center">Guides</h2>
             <div class="osu-post" id="osu!tourney_OBS_audio_passthrough">
               <h3 class="osu-post-title">osu!tourney OBS audio passthrough</h3>
               <button onclick="expandContent(this)" class="osu-post-button osu-post-show">show</button>
               <button onclick="copyLocation(this.parentNode.id)" class="osu-post-button osu-post-copy">copy link</button>
 
-              <div class="osu-post-content">
+              <div class="osu-post-content"></div> <!-- TEMPORARY REMOVE THIS --> <style>.osu-post-content{min-height:800px}</style>
                 
               </div>
             </div>
