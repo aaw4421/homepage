@@ -11,6 +11,7 @@ body {
   margin: auto;
   color: white;
   font-family: "IBM Plex Mono", monospace;
+  /* padding-left: calc(100vw - 100%); /* https://stackoverflow.com/a/30293718 - need a good way to do this... */
 }
 
 #welcome {
@@ -20,7 +21,7 @@ body {
 }
 
 #page {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
   border-left: white 1px solid;
   border-right: white 1px solid;
   position: relative;
@@ -28,7 +29,8 @@ body {
 }
 
 #header {
-  border-bottom: 1px gray dashed
+  border-bottom: 1px gray dashed;
+  padding: 0px 2px;
 }
 
 #navbar {
@@ -46,7 +48,7 @@ a:link, a:visited {
   text-decoration: none;
 }
 a.osu-nav {
-  color: hotpink;
+  color: #f261a2;
 }
 
 #navbar {

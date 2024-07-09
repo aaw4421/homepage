@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>adam's osu stuff</title>
-    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/styles/common.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/styles/osu.css" rel="stylesheet" type="text/css" media="all">
     <base target="_blank">
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 
@@ -15,6 +16,9 @@
         var contentEl = b.nextElementSibling.nextElementSibling;
         switch(contentEl.style.display) {
           case "none": case "":
+            var path = window.location.href.split("#")[0];
+            var target = path + "#" + b.parentNode.id;
+            window.location.replace(target); // maybe not replace. idk whats better.
             contentEl.style.display = "block";
             break;
           default:
@@ -29,65 +33,6 @@
         navigator.clipboard.writeText(result);
       }
     </script>
-    <style>
-        #osu-lead ul {
-            padding: 0px;
-            padding-top: 10px;
-            width: 50%;
-            margin: auto;
-            text-align: center
-        } #osu-lead li {
-            padding-bottom: 10px
-        }
-        .ellipsis {
-            text-align: center;
-            color: gray
-        }
-        p {
-            text-align: center;
-        }
-        .osu-post {
-          display: grid;
-          grid-template-columns: auto 4em 7em;
-          gap: 8px;
-          grid-row: auto auto;
-        }
-        .osu-post-title {
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
-        .osu-post-content {
-          display: none;
-        }
-        .osu-post-button {
-          background: none;
-          border: none;
-          height: fit-content;
-          width: fit-content;
-          margin: auto;
-
-          color: skyblue;
-          font-family: inherit;
-          cursor: pointer;
-        } .osu-post-button::before,.osu-post-button::after {
-          color: white;
-        }.osu-post-button::before {
-          content: "["
-        } .osu-post-button::after {
-          content: "]"
-        }
-
-        #milestones {
-          color: gray;
-          font-size: 90%
-        }
-        .play-milestone {
-          color: darkgoldenrod
-        }
-        .play-milestone:link, .play-milestone:visited {
-          color: gold
-        }
-    </style>
   </head>
   <body>
     <div id="page">
@@ -102,14 +47,16 @@
                 <li><a href="https://osu.ppy.sh"><img src="https://raw.githubusercontent.com/ppy/osu/master/assets/lazer.png" width="64px"></a></li>
                 <li><a href="https://osu.ppy.sh/users/4349974">user page</a></li>
                 <li><a href="/osu-staffing">tourney staffing history</a></li>
+                <li><a href="https://drive.google.com/file/d/1q4DSFM_oSzebYyE5R7O9I9BmkD9Eb02P/view?usp=sharing">scene collection templates</a></li>
                 <!-- <li><a target="_self" href="#guides">guides</a></li> -->
             </ul>
           </div>
           <div class="ellipsis">...</div>
 
-          <p>i am an osu!standard player since 2014, now mostly a tournament streamer and sometimes player -- I also manage the osu! team/club at RIT</p>
+          <p>i am an osu!standard player since 2014, now mostly a tournament streamer and sometimes player -- I also manage the osu! teams/club at RIT</p>
+          <p>staff requests <span style="color:lightgreen;">open</span>, DM me on discord @adamw</p>
           <ul id="milestones">
-            <li>2014/05/03: account created @ 23:48:26 (UTC); rank 1 was rrtyui</li>
+            <li>2014/05/03: account created @ 23:48:26 (UTC); rank 1 was <a href="https://osu.ppy.sh/wiki/en/History_of_osu%21/Online_rankings/osu%21#2014">rrtyui</a></li>
             <li>2015/10/28: <a class="play-milestone">100pp play</a> - <a href="https://osu.ppy.sh/beatmapsets/79116#osu/221948">Hoshizora no Ima [Insane]</a></li>
             <li>2016/01/31: 3,000 total pp</li>
             <li>2016/02/03: <a class="play-milestone">200pp play</a> - <a href="https://osu.ppy.sh/beatmapsets/313330#osu/699471">Watashi, Shuyaku no Akaza Akari Desu [Akariiin~!]</a></li>
@@ -121,21 +68,113 @@
             <li>2017/08/11: <a href="/assets/osu/bestfriends.png" class="play-milestone">400pp play</a> - <a href="https://osu.ppy.sh/beatmapsets/249939#osu/574471">Best FriendS [Insane]</a> +HDDT</li>
             <li>2017/12/21: 7,000 total pp</li>
             <li>2018/07/14: <a href="/assets/osu/FalselyRestrictedFor1Year2Months.png" style="color:inherit">top 1k rank, 8,000 total pp, peak rank</a></li>
-            <li>2019/07/04: <a href="https://osu.ppy.sh/scores/783847301" class="play-milestone">500pp play</a> <a href="https://www.youtube.com/watch?v=sCQI4R7Fwjw">(video)</a> - <a href="https://osu.ppy.sh/beatmapsets/728276#osu/1537566">Sidetracked Day [THREE DIMENSIONS]</a></li>
+            <li>2019/07/04: <a href="https://osu.ppy.sh/scores/783847301" class="play-milestone">500pp play</a> (<a href="https://www.youtube.com/watch?v=sCQI4R7Fwjw">video</a>) - <a href="https://osu.ppy.sh/beatmapsets/728276#osu/1537566">Sidetracked Day [THREE DIMENSIONS]</a></li>
           </ul>
           <p>peak rank: #964 @ 8,105pp</p>
           <a href="https://osu.ppy.sh/users/4349974#historical"><img src="/assets/osu/playhistory-july2024.png" width="75%" style="display: block; margin: auto"></a>
           <div class="ellipsis">...</div>
 
           <div id="guides">
-            <h2 style="text-align: center">Guides</h2>
+            <h2 style="text-align: center">guides</h2>
             <div class="osu-post" id="osu!tourney_OBS_audio_passthrough">
               <h3 class="osu-post-title">osu!tourney OBS audio passthrough</h3>
               <button onclick="expandContent(this)" class="osu-post-button osu-post-show">show</button>
               <button onclick="copyLocation(this.parentNode.id)" class="osu-post-button osu-post-copy">copy link</button>
 
-              <div class="osu-post-content"></div> <!-- TEMPORARY REMOVE THIS --> <style>.osu-post-content{min-height:800px}</style>
+              <div class="osu-post-content"> <!-- remove this when done post --> <style>.osu-post-content{display:block;}</style>
+                <h3>Overview</h3>
+                <p>Just screensharing OBS to a Discord call will normally not include any audio, because the OBS application isn't outputting sound itself, which is a common problem new streamers run into. The popular workaround is to use OBS Virtual Camera and share it as a <i>webcam</i> in Discord instead, while screensharing the "player 1" tournament client for its audio. If this doesn't bother you, stop right here because this workaround works for like 95% of people.</p>
+                <p>However, besides being a sort of hack solution, this uses more network and computing resources for both the streamer and the casters, as you have to send (or watch) two video feeds to Discord. Also, what if the commentators say the game audio is too low? How would you turn it up? Increasing the osu! volume will increase it on stream and requires interacting with a client during a match. Again, none of this is a big deal for most people. But if you need or want a clean, elegant solution, here you go.</p>
+                <p>This works by using an OBS Studio plugin for audio monitoring, which causes OBS to <i>actually output</i> the sound coming from osu! This means the audio will be picked up when screensharing OBS to Discord. Not only that, but the plugin allows us to increase or decrease the monitoring volume without affecting the on-stream volume or having to touch osu!</p>
+                <p>I have to assume you already know basics like how to configure and use osu!tourney, how to <i>generally</i> work with OBS, and so on. Technical information on osu! is available at the wiki if you don't.
+                  Also, I should warn that you <i>really</i> shouldn't use the same osu! installation for streaming and actually playing.</p>
                 
+                <h3>0. Important OBS audio note</h3>
+                <p>Many people just throw up a desktop audio capture to stream osu! audio and casters, but it's 2024 and there are more civilized ways. 
+                  I'll probably write a detailed "best practices" for OBS at some point, but for now let me explain one thing: <strong>use Application Audio Capture.</strong></p>
+                <p>Application Audio Capture is a type of source in OBS Studio -- it's one of those "beta" features that has always seemed to work flawlessly on every computer I've ever used.
+                  It allows you to capture audio from a single application (duh) and it should work on macOS too, as far as I know.
+                </p>
+                <p>
+                  So go ahead and replace whatever you're currently using to capture audio in OBS, instead adding two <strong>Application Audio Capture</strong> sources. 
+                  Set one to capture <strong>discord.exe</strong> (matching title or executable) and one for <strong>osu! Tournament Client 0</strong> (<strong>window title must match</strong>)
+                  <!-- image(s) -->
+                </p>
+                <p>
+                  Two great effects of setting audio up this way: 1) you can change the volume of both sources independently right from OBS Studio's audio mixer, and 2) you won't pick up random audio coming from your computer anymore, such as Windows error sounds or browser tabs or whatever! </p>
+                
+                <h3>1. Set tourney client to dummy audio device</h3>
+                <p>By setting all this up, we're basically going to be listening to osu! <i>through</i> OBS, but we don't want to hear the game twice.
+                  The way around this is to set osu! to output to some dummy audio device we won't be using. 
+                  You might have monitor speakers that can be muted, or a headphone jack on your computer you're not using.
+                  One of these will do the trick. Look in your computer audio settings for stuff like "High Definition Audio"... a lot of people don't use these devices.</p>
+                <p>
+                  If you somehow don't have an unused audio device, just go and download <a href="https://vb-audio.com/Cable/">VB-CABLE, a virtual audio device</a>. 
+                  After installing this (make sure it doesn't overwrite your headphones/speakers as the computer's default device or anything), you can use that instead.
+                </p>
+                <p>
+                  To change osu!tourney's output device, open the client in "normal mode" by renaming your <strong>tournament.cfg</strong> to something else.
+                  Open osu! settings (<strong>ctrl+o</strong>) and find the audio device setting (you can type "audio" to search). 
+                  Change it to whichever device you're going to use as discussed above.
+                  <!-- image(s) -->
+                </p>
+                <p>
+                  Yes, you won't be able to hear osu! anymore! 
+                  Don't worry, this will be fine when streaming; this is why I said not to use the same installation for actual gameplay!
+                  Close osu! and restore your <strong>tournament.cfg</strong>. You can reopen osu! in tourney mode now for the following steps.
+                </p>
+                
+                <h3>2. Install the Audio Monitor plugin for OBS Studio</h3>
+                <p>
+                  If you're using <strong>Streamlabs</strong>, stop. Stop using it. 
+                  But for real: you can do this without installing this OBS Studio plugin, but it's not very flexible and in my opinion sucks.
+                  If you want to, use <strong>Advanced Audio Properties</strong> and select <strong>Monitor and Output</strong> on the osu! audio source.
+                  I have no clue how this works on Streamlabs, so have fun!
+                </p>
+                <p>
+                  Anyway, this plugin is goated, so let's use it. Make sure OBS is closed before installing a plugin.
+                  <a href="https://obsproject.com/forum/resources/audio-monitor.1186/">Download <strong>Audio Monitor</strong> from the OBS website</a> -- most people can probably just use the installer,
+                  but if you want/need to install it manually, you can do so by downloading the zip file and dragging (merging) its contents into your <strong>obs-studio</strong> folder.
+                  <!-- obs plugin installation gif needed -->
+                </p>
+                
+                <h3>3. Add an Audio Monitor filter to the osu! audio source</h3>
+                <p>
+                  Side note: if you're using one of my <a href="https://drive.google.com/file/d/1q4DSFM_oSzebYyE5R7O9I9BmkD9Eb02P/view?usp=sharing">ready-made scene collections</a>, you don't need to do this step, 
+                  since the Audio Monitor <strong>filter</strong> is already configured! ...
+                </p>
+                <p>Here's where <strong>Step 0</strong> is important!
+                  Open OBS Studio after installing the plugin, right click on the osu! <strong>Application Audio Capture</strong> source, and click on <strong>Filters</strong>.
+                  add a new <strong>Audio Monitor</strong> filter. As long as the filter has your headphones/speakers selected, you'll now be able to hear osu again <i>while it's in tourney mode</i>! 
+                  Adjust the volume to your liking -- quiet enough that you can hear casters but it loud enough that <i>they</i> will be able to hear it comfortably.
+                  For me, 40% is a good volume.
+                  <!-- IMAGE -->
+                </p>
+                <p>
+                  You probably don't need any of the other settings -- don't link it with source volume, but you may prefer to use <strong>Linked to source muting</strong>.
+                  <!-- image......? -->
+                </p>
+                
+                <h3>4. Stream a projector to Discord</h3>
+                <p>
+                  At this point, congratulations! You could just go to Discord, screenshare OBS Studio, and call it a day. I kind of don't like doing that for various reasons I don't feel like explaining.
+                  Instead, I use OBS <strong>projectors</strong>.
+                  Projectors are a method of "popping out" sources and scenes as separate windows from OBS Studio.
+                </p>
+                <p>
+                  To open a projector, right click some element (a scene, source, or <strong>view</strong>) and click "Windowed Projector" or "Fullscreen Projector".
+                  For your purposes with streaming osu!, assuming you have <strong>Studio Mode</strong> enabled, right click the <strong>right-hand side of the preview area</strong> (a note on this in a second)
+                  and choose <strong>[Windowed or Fullscreen] Projector (Program)</strong>. Then, as long as you don't minimize this new window, you can screenshare that.
+                  <!-- projector image(s) -->
+                </p>
+                <p>
+                  If you aren't using Studio Mode, learn about it and start using it. That said, if you aren't, just right click the preview area and choose the <strong>(Preview)</strong> projector.
+                  Basically, "Program" refers to the view that is <i>currently live</i>, while "Preview" is what's waiting to be <span id="trans">transitioned</span> to live.
+                </p>
+
+                <p style="text-align: center">
+                  Congrats, now you're cooking with gas! As always, ask me anything @adamw on the <a href="https://discord.gg/bvhajDC">osu! Tournament Hub</a> or by DM.
+                </p>
               </div>
             </div>
           </div>
