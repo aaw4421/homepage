@@ -24,6 +24,10 @@
     border: solid 1px gray;
 }
 
+code {
+    background-color: #1f1f1f;
+}
+
 .osu-post p i,.osu-post p b,.osu-post p strong {
     color: yellow;
 }

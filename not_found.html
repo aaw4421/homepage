@@ -3,13 +3,24 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Not Found</title>
+    <title>404 - Not Found</title>
     <link href="/styles/common.css" rel="stylesheet" type="text/css" media="all">
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
   </head>
   <body>
     <div id="page">
-      <h1>Page Not Found</h1>
-      <p>The requested page was not found.</p>
+      <div id="header">
+        <h1 id="title">404 not found</h1>
+        <ul id="navbar">...<noscript>sorry, my site's navbar uses javascript...</noscript></ul>
+        <script src="/navbar.js"></script>
+      </div>
+
+      <div id="meat-container">
+        <p style="text-align:center">not really sure what you were looking for, but it's not here. sorry.</p>
+      </div>
     </div>
   </body>
 </html>
