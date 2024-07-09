@@ -75,19 +75,18 @@
           <div class="ellipsis">...</div>
 
           <div id="guides">
-            <h2 style="text-align: center">guides</h2>
+            <h2 style="text-align: center; margin-bottom: 4px;">guides</h2>
+            <p style="color: gray; font-size: 75%; margin-top: 0px;">images may load slowly.</p>
             <div class="osu-post" id="osu!tourney_OBS_audio_passthrough">
               <h3 class="osu-post-title">osu!tourney OBS audio passthrough</h3>
               <button onclick="expandContent(this)" class="osu-post-button osu-post-show">show</button>
               <button onclick="copyLocation(this.parentNode.id)" class="osu-post-button osu-post-copy">copy link</button>
 
-              <div class="osu-post-content"> <!-- remove this when done post --> <style>.osu-post-content{display:block;}</style>
+              <div class="osu-post-content">
                 <h3>Overview</h3>
                 <p>Just screensharing OBS to a Discord call will normally not include any audio, because the OBS application isn't outputting sound itself, which is a common problem new streamers run into. The popular workaround is to use OBS Virtual Camera and share it as a <i>webcam</i> in Discord instead, while screensharing the "player 1" tournament client for its audio. If this doesn't bother you, stop right here because this workaround works for like 95% of people.</p>
                 <p>However, besides being a sort of hack solution, this uses more network and computing resources for both the streamer and the casters, as you have to send (or watch) two video feeds to Discord. Also, what if the commentators say the game audio is too low? How would you turn it up? Increasing the osu! volume will increase it on stream and requires interacting with a client during a match. Again, none of this is a big deal for most people. But if you need or want a clean, elegant solution, here you go.</p>
                 <p>This works by using an OBS Studio plugin for audio monitoring, which causes OBS to <i>actually output</i> the sound coming from osu! This means the audio will be picked up when screensharing OBS to Discord. Not only that, but the plugin allows us to increase or decrease the monitoring volume without affecting the on-stream volume or having to touch osu!</p>
-                <p>I have to assume you already know basics like how to configure and use osu!tourney, how to <i>generally</i> work with OBS, and so on. Technical information on osu! is available at the wiki if you don't.
-                  Also, I should warn that you <i>really</i> shouldn't use the same osu! installation for streaming and actually playing.</p>
                 
                 <h3>0. Important OBS audio note</h3>
                 <p>Many people just throw up a desktop audio capture to stream osu! audio and casters, but it's 2024 and there are more civilized ways. 
@@ -97,8 +96,12 @@
                 </p>
                 <p>
                   So go ahead and replace whatever you're currently using to capture audio in OBS, instead adding two <strong>Application Audio Capture</strong> sources. 
-                  Set one to capture <strong>discord.exe</strong> (matching title or executable) and one for <strong>osu! Tournament Client 0</strong> (<strong>window title must match</strong>)
-                  <!-- image(s) -->
+                  Set one to capture <strong>discord.exe</strong> (matching title or executable) and one for <strong>osu! Tournament Client 0</strong> (<strong>window title must match</strong>).
+                  <div class="osu-guide-images">
+                    <a href="/assets/osu/guides/passthrough/obs-aac-adding.png"><img src="/assets/osu/guides/passthrough/obs-aac-adding.png"></a>
+                    <a href="/assets/osu/guides/passthrough/obs-aac-properties-dc.png"><img src="/assets/osu/guides/passthrough/obs-aac-properties-dc.png"></a>
+                    <a href="/assets/osu/guides/passthrough/obs-aac-properties-osu.png"><img src="/assets/osu/guides/passthrough/obs-aac-properties-osu.png"></a>
+                  </div>
                 </p>
                 <p>
                   Two great effects of setting audio up this way: 1) you can change the volume of both sources independently right from OBS Studio's audio mixer, and 2) you won't pick up random audio coming from your computer anymore, such as Windows error sounds or browser tabs or whatever! </p>
@@ -116,7 +119,10 @@
                   To change osu!tourney's output device, open the client in "normal mode" by renaming your <strong>tournament.cfg</strong> to something else.
                   Open osu! settings (<strong>ctrl+o</strong>) and find the audio device setting (you can type "audio" to search). 
                   Change it to whichever device you're going to use as discussed above.
-                  <!-- image(s) -->
+                  <div class="osu-guide-images">
+                    <a href="/assets/osu/guides/passthrough/renaming-cfg.gif"><img src="/assets/osu/guides/passthrough/renaming-cfg.gif"></a>
+                    <a href="/assets/osu/guides/passthrough/osu-change-audio.gif"><img src="/assets/osu/guides/passthrough/osu-change-audio.gif"></a>
+                  </div>
                 </p>
                 <p>
                   Yes, you won't be able to hear osu! anymore! 
@@ -135,24 +141,27 @@
                   Anyway, this plugin is goated, so let's use it. Make sure OBS is closed before installing a plugin.
                   <a href="https://obsproject.com/forum/resources/audio-monitor.1186/">Download <strong>Audio Monitor</strong> from the OBS website</a> -- most people can probably just use the installer,
                   but if you want/need to install it manually, you can do so by downloading the zip file and dragging (merging) its contents into your <strong>obs-studio</strong> folder.
-                  <!-- obs plugin installation gif needed -->
+                  <div class="osu-guide-images">
+                    <a href="/assets/osu/guides/passthrough/obs-plugin-install.gif"><img src="/assets/osu/guides/passthrough/obs-plugin-install.gif"></a>
+                  </div>
                 </p>
                 
                 <h3>3. Add an Audio Monitor filter to the osu! audio source</h3>
-                <p>
-                  Side note: if you're using one of my <a href="https://drive.google.com/file/d/1q4DSFM_oSzebYyE5R7O9I9BmkD9Eb02P/view?usp=sharing">ready-made scene collections</a>, you don't need to do this step, 
-                  since the Audio Monitor <strong>filter</strong> is already configured! ...
-                </p>
                 <p>Here's where <strong>Step 0</strong> is important!
                   Open OBS Studio after installing the plugin, right click on the osu! <strong>Application Audio Capture</strong> source, and click on <strong>Filters</strong>.
                   add a new <strong>Audio Monitor</strong> filter. As long as the filter has your headphones/speakers selected, you'll now be able to hear osu again <i>while it's in tourney mode</i>! 
                   Adjust the volume to your liking -- quiet enough that you can hear casters but it loud enough that <i>they</i> will be able to hear it comfortably.
                   For me, 40% is a good volume.
-                  <!-- IMAGE -->
+                  <div class="osu-guide-images">
+                    <a href="/assets/osu/guides/passthrough/obs-add-filter.png"><img src="/assets/osu/guides/passthrough/obs-add-filter.png"></a>
+                    <a href="/assets/osu/guides/passthrough/obs-filter-properties.png"><img src="/assets/osu/guides/passthrough/obs-filter-properties.png"></a>
+                  </div>
                 </p>
                 <p>
                   You probably don't need any of the other settings -- don't link it with source volume, but you may prefer to use <strong>Linked to source muting</strong>.
-                  <!-- image......? -->
+                  <div class="osu-guide-images">
+                    <a href="/assets/osu/guides/passthrough/obs-monitor-link.png"><img src="/assets/osu/guides/passthrough/obs-monitor-link.png"></a>
+                  </div>
                 </p>
                 
                 <h3>4. Stream a projector to Discord</h3>
@@ -165,15 +174,18 @@
                   To open a projector, right click some element (a scene, source, or <strong>view</strong>) and click "Windowed Projector" or "Fullscreen Projector".
                   For your purposes with streaming osu!, assuming you have <strong>Studio Mode</strong> enabled, right click the <strong>right-hand side of the preview area</strong> (a note on this in a second)
                   and choose <strong>[Windowed or Fullscreen] Projector (Program)</strong>. Then, as long as you don't minimize this new window, you can screenshare that.
-                  <!-- projector image(s) -->
+                  <div class="osu-guide-images">
+                    <a href="/assets/osu/guides/passthrough/obs-projector.png"><img src="/assets/osu/guides/passthrough/obs-projector.png"></a>
+                  </div>
                 </p>
                 <p>
                   If you aren't using Studio Mode, learn about it and start using it. That said, if you aren't, just right click the preview area and choose the <strong>(Preview)</strong> projector.
                   Basically, "Program" refers to the view that is <i>currently live</i>, while "Preview" is what's waiting to be <span id="trans">transitioned</span> to live.
+                  These are industry standard terms in broadcasting.
                 </p>
 
-                <p style="text-align: center">
-                  Congrats, now you're cooking with gas! As always, ask me anything @adamw on the <a href="https://discord.gg/bvhajDC">osu! Tournament Hub</a> or by DM.
+                <p style="text-align: center; font-size: 80%">
+                  Congrats, now you're cooking with gas! As always, ask me anything <strong>@adamw</strong> on the <a href="https://discord.gg/bvhajDC">osu! Tournament Hub</a> or by DM.
                 </p>
               </div>
             </div>
