@@ -1,7 +1,7 @@
 #osu-lead ul {
     padding: 0px;
     padding-top: 10px;
-    width: 50%;
+    width: 90%;
     margin: auto;
     text-align: center
 } #osu-lead li {
@@ -13,50 +13,9 @@
 }
 p {
   text-align: center;
-} .osu-post p i,.osu-post p b,.osu-post p strong {
-  color: yellow;
 }
 #guides {
   margin-bottom: 16px;
-}
-.osu-post {
-  display: grid;
-  grid-template-columns: auto 4em 7em;
-  gap: 8px;
-}
-.osu-post-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-bottom: 0px;
-  margin: auto 0;
-}
-.osu-post-content {
-  display: none;
-  grid-column: span 3;
-  background-color: rgba(64, 64, 64, 0.15)
-} .osu-post-content p {
-  text-align: left;
-  font-size: 90%;
-  padding: 0px 20px;
-} .osu-post-content h3 {
-  padding-left: 12px;
-}
-.osu-post-button {
-  background: none;
-  border: none;
-  height: fit-content;
-  width: fit-content;
-  margin: auto;
-
-  color: skyblue;
-  font-family: inherit;
-  cursor: pointer;
-} .osu-post-button::before,.osu-post-button::after {
-  color: white;
-}.osu-post-button::before {
-  content: "["
-} .osu-post-button::after {
-  content: "]"
 }
 
 #milestones {
@@ -65,24 +24,4 @@ p {
 }
 .play-milestone, .play-milestone:link, .play-milestone:visited {
   color: white;
-}
-
-#trans {
-    background: linear-gradient(90deg, rgba(91,206,250,1) 0%, rgba(245,169,184,1) 20%, rgba(255,255,255,1) 50%, rgba(245,169,184,1) 80%, rgba(91,206,250,1) 100%);
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-}
-
-.osu-guide-images {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-
-} .osu-guide-images > a{
-    max-width: 32%;
-    min-width: 150px;
-} .osu-guide-images > a img {
-    width: 100%;
-    border: solid 1px gray;
 }

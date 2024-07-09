@@ -1,0 +1,29 @@
+.osu-post {
+    background-color: rgba(64, 64, 64, 0.15);
+    border-radius: 10px;
+    padding: 0.05px 8px;
+    margin: 16px auto;
+}
+.osu-post p {
+    text-align: left;
+    font-size: 90%;
+    padding: 0px 20px;
+} .osu-post h3 {
+    padding-left: 12px;
+}
+
+.osu-guide-images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+} .osu-guide-images > a{
+    max-width: 32%;
+    min-width: 150px;
+} .osu-guide-images > a img {
+    width: 100%;
+    border: solid 1px gray;
+}
+
+.osu-post p i,.osu-post p b,.osu-post p strong {
+    color: yellow;
+}

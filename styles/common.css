@@ -28,6 +28,16 @@ body {
   min-height: 100vh;
 }
 
+@media screen and (max-width: 850px) {
+  #page {
+    border: none;
+  }
+} @media screen and (max-width: 420px) {
+  html {
+    font-size: 16px;
+  }
+}
+
 #header {
   border-bottom: 1px gray dashed;
   padding: 0px 2px;
@@ -60,7 +70,7 @@ a.osu-nav {
 }
 
 #meat-container {
-  padding: 5px 30px;
+  padding: 5px 24px;
 }
 
 #footer {
