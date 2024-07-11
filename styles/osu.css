@@ -10,6 +10,7 @@
 .ellipsis {
     text-align: center;
     color: white;
+    margin: 24px auto;
 }
 p {
   text-align: center;
