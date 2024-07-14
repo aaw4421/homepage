@@ -52,7 +52,7 @@ body {
   padding: 0px;
 }
 
-a:link, a:visited {
+a:any-link {
   color: skyblue;
   text-decoration: none;
 }

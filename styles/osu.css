@@ -23,6 +23,6 @@ p {
   color: gray;
   font-size: 90%
 }
-.play-milestone, .play-milestone:link, .play-milestone:visited {
+.play-milestone, .play-milestone:any-link {
   color: white;
 }
