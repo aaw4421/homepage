@@ -25,9 +25,10 @@
 }
 
 code {
-    background-color: #1f1f1f;
+    background-color: #f3d8d8;
+    color: black;
 }
 
 .osu-post p i,.osu-post p b,.osu-post p strong {
-    color: yellow;
+    color: #f81414;
 }
