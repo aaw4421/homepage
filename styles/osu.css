@@ -9,7 +9,7 @@
 }
 .ellipsis {
     text-align: center;
-    color: black;
+    color: white;
     margin: 24px auto;
 }
 p {
@@ -20,7 +20,7 @@ p {
 }
 
 #milestones {
-  color: rgb(155, 100, 100);
+  color: gray;
   font-size: 90%
 }
 .play-milestone, .play-milestone:any-link {

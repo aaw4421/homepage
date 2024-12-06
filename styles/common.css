@@ -1,39 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 html {
   font-size: 18px;
-  font-family: "Sour Gummy", sans-serif;
 }
 
 body {
-  background-color: rgb(228, 149, 161);
-  color: #662b3f;
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  margin: 0;
-}
-
-#container {
-  background-color: rgb(255, 202, 210);
-  width: min(100%, 800px);
-  border: rgb(195, 121, 121) solid 2px;
-  border-radius: 24px;
-  margin: 24px auto;
+  background-color: black;
+  background-image: url("/assets/stars.gif");
+  width: min(100%, 850px);
+  margin: auto;
+  color: white;
+  font-family: "IBM Plex Mono", monospace;
   /* padding-left: calc(100vw - 100%); /* https://stackoverflow.com/a/30293718 - is this necessary? */
 }
 
-main {
-  padding: 8px 24px;
+#title {
+  text-align: center;
+  margin: 0;
+  padding-top: 20px;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
-@media screen and (max-width: 800px) {
-  body {
-    border-left: none;
-    border-right: none;
+#page {
+  background-color: rgba(0, 0, 0, 0.85);
+  border-left: white 1px solid;
+  border-right: white 1px solid;
+  position: relative;
+  min-height: 100vh;
+}
+
+@media screen and (max-width: 850px) {
+  #page {
+    border: none;
   }
 } @media screen and (max-width: 420px) {
   html {
@@ -41,70 +40,58 @@ main {
   }
 }
 
-header {
-  border-bottom: 1px dashed gray;
-  padding: 24px 2px;
+#header {
+  border-bottom: 1px gray dashed;
+  padding: 0px 2px;
 }
 
-#title {
-  text-align: center;
-  margin: 0;
-  padding-top: 0;
-  padding-left: 12px;
-  padding-right: 12px;
-  color: #f93f7d;
-}
-
-nav {
+#navbar {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 0px;
 }
-nav>li {
-  display: inline;
-}
 
 a:any-link {
-  color: rgb(5, 137, 189);
+  color: skyblue;
   text-decoration: none;
 }
-nav a {
+#navbar a {
   text-decoration: none;
 }
 a.osu-nav {
-  color: #f83d91;
+  color: #f261a2;
 }
 
-footer {
-  color: rgb(157, 47, 47);
-  font-size: 0.9rem;
+#navbar {
+  list-style-type: none;
+}
+
+#navbar>li {
+  display: inline;
+}
+
+#meat-container {
+  padding: 5px 24px;
+}
+
+#footer {
+  color: gray;
+  font-size: 0.6rem;
   text-align: center;
   width: 100%;
   position: absolute;
-  bottom: 12px; /* Breaks when screen isn't tall enough */
+  bottom: 0px;
+  border-top: 1px gray dashed;
 }
 
 img[onclick]:hover {
   cursor: pointer;
 }
 
-button {
-  font-family: inherit;
-  background-color: rgba(238, 100, 146, 0.99);
-  border: none;
-  border-radius: 8px;
-  color: rgb(255, 255, 255);
-  padding: 3px;
-}
-a * {
-  cursor: pointer;
-}
-
-.indent {
-  border-left: 2px rgba(209, 125, 125, 0.75) dashed;
-  margin-left: 8px;
-  padding-left: 24px;
+.gray-indent {
+  border-left: 2px rgba(64, 64, 64, 0.75) dashed;
+  padding-left: 25px;
   padding-top: 4px;
   padding-bottom: 4px;
 }

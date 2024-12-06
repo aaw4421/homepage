@@ -5,41 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>adam's home</title>
     <link href="/styles/common.css" rel="stylesheet" type="text/css" media="all">
-
-    <style>
-      #content {
-        display: flex;
-        font-size: 1.1rem;
-      }
-      main {
-        text-align: center;
-        padding-right: 16px;
-        width: 100%;
-      }
-      aside {
-        flex: 0 0 25%;
-        max-width: 25%;
-        display: flex;
-        flex-flow: column wrap;
-        align-items: center;
-        border-left: 1px dashed gray;
-      }
-      aside > a:first-child {
-        margin-top: 20px;
-      }
-      aside > a:last-child {
-        margin-bottom: 20px;
-      }
-      aside > a {
-        display: block;
-        width: 70%;
-        margin: 2px auto;
-      }
-      aside > a > button {
-        width: 100%;
-      }
-    </style>
-
     <base target="_blank">
     <script
 			  src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -47,35 +12,28 @@
 			  crossorigin="anonymous"></script>
   </head>
   <body>
-    <div id="container">
-      <header>
-        <h1 id="title">welcome to adam's home</h1>
-        <nav>...<noscript>sorry, my site's navbar uses javascript...</noscript></nav>
-        <script src="/navbar.js"></script>
-      </header>
+    <div id="page">
+        <div id="header">
+          <h1 id="title">welcome to adam's home</h1>
+          <ul id="navbar">...<noscript>sorry, my site's navbar uses javascript...</noscript></ul>
+          <script src="/navbar.js"></script>
+        </div>
 
-      <section id="content">
-        <main>
-          <p>adam // 23 years old // <img src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/636e0a6ac3c481f273141736_icon_clyde_black_RGB.png" height="12px" style="display: inline"> adamw</p>
-          <p>cybersecurity undergrad @ <a href="https://www.rit.edu/">RIT</a></p>
-          <p>originally from delco, PA ~ now western Maine</p>
-          <p>speedrunner, osu! player, english wikipedia editor</p>
-          <p>production lead + osu! manager at <a href="https://www.rit.edu/esports/">RIT Esports</a></p>
-          <p>~~~</p>
-        </main>
-        
-        <aside>
-          <h4 style="margin: 12px auto;">my stuff</h4>
-          <a href="https://osu.ppy.sh/users/4349974"><button>osu!</button></a>
-          <a href="https://www.twitch.tv/bluecrystal004"><button>twitch</button></a>
-          <a href="https://www.youtube.com/channel/UCBZtAmynQt-RR3eBO-ozDsw"><button>youtube</button></a>
-          <a href="https://en.wikipedia.org/wiki/User:Adam"><button>english wikipedia</button></a>
-          <a href="https://www.speedrun.com/BlueCrystal004"><button>speedrun.com</button></a>
-          <a href="https://github.com/aaw4421"><button>github</button></a>
-          <a href="https://rateyourmusic.com/~BlueCrystal004"><button>rym</button></a>
-          <a href="https://backloggd.com/u/BlueCrystal/"><button>backloggd</button></a>
-        </aside>
-      </section>
+        <div id="meat-container">
+          <p>hi there i'm adam, and i made this site in June 2024</p>
+          <p>i am a 23 year old undergrad cybersecurity student at <a href="https://www.rit.edu/">RIT</a>, and thus goes the story of my life: i grew up in delaware county, Pennsylvania playing baseball and video games; in 2013 i stopped playing sports and discovered <a href="https://www.speedrun.com/users/BlueCrystal004">video game speedrunning</a>; in 2014 i discovered <a href="https://osu.ppy.sh/users/4349974">osu!</a> -- these are the constants of my life</p>
+          <p>for the past couple years I've been <a href="https://en.wikipedia.org/wiki/User:Adam">editing the English Wikipedia</a>, I have an interest in linguistics (I am also minoring in it), and I enjoy streaming esports (including osu!) as the production lead for RIT Esports</p>
+          <p>also the most important fact about me is that i solved notpr0n on 2019/09/20 with a couple of my friends</p>
+          <hr width="50%" size="1px">
+
+          <div>
+            <h4>my opinions about things</h4>
+            <ul class="link-list">
+              <li><a href="https://rateyourmusic.com/~BlueCrystal004">rym</a></li>
+              <li><a href="https://backloggd.com/u/BlueCrystal/">backloggd</a></li>
+            </ul>
+          </div>
+        </div>
     </div>
   </body>
 </html>
