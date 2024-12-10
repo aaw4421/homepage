@@ -1,0 +1,16 @@
+.book-part {
+    list-style-position: inside;
+}
+.finished {
+    list-style-type: "\2611  ";
+}
+.unfinished {
+    list-style-type: "\2610  ";
+}
+#master-list {
+    text-align: start;
+    padding: 0px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
