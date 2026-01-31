@@ -10,8 +10,8 @@ body {
   width: min(100%, 850px);
   margin: auto;
   color: white;
-  font-family: "Verdana", sans-serif;
-  /* padding-left: calc(100vw - 100%); /* https://stackoverflow.com/a/30293718 - is this necessary? */
+  font-family: "MS PGothic", sans-serif;
+  padding-left: calc(100vw - 100%); /* https://stackoverflow.com/a/30293718 - is this necessary? */
 }
 
 #title {
@@ -24,15 +24,19 @@ body {
 
 #page {
   background-color: rgba(0, 0, 0, 0.85);
-  border-left: white 1px solid;
-  border-right: white 1px solid;
+  border: white 1px solid;
   position: relative;
-  min-height: 100vh;
+  top: 40px;
+  min-height: 600px;
 }
 
 @media screen and (max-width: 850px) {
   #page {
+    top: 0px;
     border: none;
+    border-bottom: white 1px solid;
+  } body {
+    padding: 0px;
   }
 } @media screen and (max-width: 420px) {
   html {
@@ -56,8 +60,8 @@ a:any-link {
   color: skyblue;
   text-decoration: none;
 }
-#navbar a {
-  text-decoration: none;
+.nav-link {
+  margin: 0px 4px;
 }
 a.osu-nav {
   color: #f261a2;
