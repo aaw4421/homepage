@@ -11,8 +11,6 @@
 			  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
 			  crossorigin="anonymous"></script>
 
-    <!-- this entire site is glued together, expect to mald looking through the source code -->
-
     <style>
       #guides {
           margin-bottom: 16px;
@@ -28,20 +26,16 @@
     <div id="page">
         <div id="header">
           <h1 id="title">adam's osu! streaming guides</h1>
-          <ul id="navbar">...<noscript>sorry, my site's navbar uses javascript...</noscript></ul>
-          <script src="/navbar.js"></script>
+          <ul id="navbar"><!--# include file="/includes/navbar.html" --></ul>
         </div>
+        
         <div id="content">
             <div id="guides">
                 <h3><a href="/osu-guides/obs-audio-passthrough.html">OBS audio passthrough (stream osu! audio to discord screenshare)</a></h3>
-                <h3><a href="/osu-guides/ref-advice-streamed.html">advice for reffing streamed matches</a></h3>
-                <h3><a>...</a></h3>
-                <h3><a>...</a></h3>
-                <h3><a>...</a></h3>
-                <h3><a>...</a></h3>
-                <h3><a>...</a></h3>
             </div>
         </div>
+
+        <!--# include file="/includes/footer.html" -->
     </div>
   </body>
 </html>
