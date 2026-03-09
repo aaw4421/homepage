@@ -74,7 +74,23 @@ export const CHANNEL_LIST = [
     "bluecrystal004",
     "tyron18",
     "twelveseven",
-    "pumpsovergains"
+    "pumpsovergains",
+    "asianol",
+    "theg_032",
+    "totori_rta",
+    "birupon",
+    "reikuugo",
+    "swan_st",
+    "commy531",
+    "namatasu",
+    "crazy_calv",
+    "everchix",
+    "sanchan0358",
+    "enmeiq",
+    "kurcop",
+    "ayakaze_00",
+    "akimaro8318",
+    "sunflower8814",
 ];
 
 // Community channels, events, marathons, 24/7 channels, etc.
