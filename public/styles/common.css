@@ -65,6 +65,9 @@ footer {
   justify-content: space-evenly;
   min-height: 80px;
   border-top: 1px gray dashed;
+  color: gray;
+  font-size: 12px;
+  text-align: center;
 }
 
 a:any-link {
