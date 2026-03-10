@@ -7,6 +7,20 @@
         <link rel="stylesheet" href="/styles/common.css">
         <link rel="stylesheet" href="/styles/streams.css">
         <script type="module" src="/streams/index.js"></script>
+        <script>
+            function toggleSettingsVisibility() {
+                const settingsToggleEl = document.getElementById("settings-toggle");
+                const settingsPanelEl = document.getElementById("settings-panel");
+
+                if (settingsPanelEl.style.display === "none") {
+                    settingsPanelEl.style.display = "block";
+                    settingsToggleEl.textContent = "Hide Settings";
+                } else {
+                    settingsPanelEl.style.display = "none";
+                    settingsToggleEl.textContent = "Show Settings";
+                }
+            }
+        </script>
     </head>
     <body>
         <div id="page">
@@ -15,9 +29,31 @@
                 <ul id="navbar"><!--# include file="~/includes/navbar.html" --></ul>
             </div>
 
-            <div id="explanation">
-                a listing of live Twitch streams, curated by me to include only people who primarily do speedruns
-                <br>streams are sorted totally randomly by default! but more features coming soon
+            <div id="under-header">
+                <div id="explanation" class="under-header">
+                    a listing of live Twitch streams, curated by me to include only people who primarily do speedruns
+                    <br>streams are sorted totally randomly by default! but more features coming soon
+                </div>
+                <p id="settings-toggle" class="under-header" onclick="toggleSettingsVisibility()">Show Settings</p>
+                <div id="settings-panel" style="display: none;">
+                    <div id="sort-settings-container">
+                        <label for="sort-dropdown">Sort by:</label>
+                        <select id="sort-dropdown" name="sort">
+                            <option value="random">Random</option>
+                            <option value="viewers">Viewers</option>
+                            <option value="channel">Channel name</option>
+                            <option value="game">Game name</option>
+                            <option value="language">Language</option>
+                        </select>
+                    </div>
+                    <div id="order-settings-container">
+                        <form id="order-form" name="order">
+                            <label for="order">Order:</label>
+                            <input id="order-asc-radio" name="order" type="radio" value="asc" checked>Ascending</input>
+                            <input id="order-desc-radio"name="order" type="radio" value="desc">Descending</input>
+                        </form>
+                    </div>
+                </div>
             </div>
 
             <div id="content">

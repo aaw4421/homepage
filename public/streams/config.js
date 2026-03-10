@@ -161,6 +161,23 @@ export const CHANNEL_LIST = [
     "iceblue",
     "karinana",
     "theglubbers",
+    "firnenlegacy",
+    "hayabusa_rta",
+    "nebula_composer",
+    "jcog",
+    "hami9214",
+    "karinpune",
+    "parsee6",
+    "amiral_n64",
+    "keiichi",
+    "whitehat94",
+    "dwhatever",
+    "yatokami9",
+    "twirlyaus",
+    "joydurnyup",
+    "kirukuro",
+    "mk64mr",
+    "jaquarium",
 ];
 
 // Community channels, events, marathons, 24/7 channels, etc.

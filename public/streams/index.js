@@ -1,4 +1,5 @@
 import { CLIENT_ID, CHANNEL_LIST } from "./config.js";
+let streamList;
 
 /* Adds a link for users to authenticate with Twitch OAuth */
 async function serveTwitchAuthURL() {
@@ -22,11 +23,12 @@ async function serveTwitchAuthURL() {
 
 /* Fetch list of currently-live streams for the list of curated usernames. */
 async function fetchStreams(token) {
+    let uniqueChannels = Array.from(new Set(CHANNEL_LIST));
     let fullStreamList = [];
 
     const MAX_IDS_PER_REQUEST = 100;
-    for (let i = 0; i < CHANNEL_LIST.length; i+=MAX_IDS_PER_REQUEST) {
-        const channelsSubset = CHANNEL_LIST.slice(i, i+MAX_IDS_PER_REQUEST);
+    for (let i = 0; i < uniqueChannels.length; i+=MAX_IDS_PER_REQUEST) {
+        const channelsSubset = uniqueChannels.slice(i, i+MAX_IDS_PER_REQUEST);
         const channelsAsParamString = channelsSubset.map((u) => "user_login=" + u).join("&");
         const response = await fetch("https://api.twitch.tv/helix/streams?type=live&first=100&" + channelsAsParamString, {
             method: "GET",
@@ -123,8 +125,63 @@ async function handleTokenLogic() {
     return token;
 }
 
-function buildStreamListing(streamObjList, sortMethod="random") {
-    //TODO
+function getSortingFunction(sort="random", order="asc") {
+    switch(sort) {
+        case("channel"):
+            return order==="asc" ? (a,b) => a.user_login.localeCompare(b.user_login) : (a,b) => b.user_login.localeCompare(a.user_login);
+        case("viewers"):
+            return order==="asc" ? (a,b) => a.viewer_count - b.viewer_count : (a,b) => b.viewer_count - a.viewer_count;
+        case("game"):
+            return order==="asc" ? (a,b) => a.game_name.localeCompare(b.game_name) : (a,b) => b.game_name.localeCompare(a.game_name);
+        case("language"):
+            return order==="asc" ? (a,b) => a.language.localeCompare(b.language) : (a,b) => b.language.localeCompare(a.language);
+        default:
+            return (a,b) => Math.random()-0.5;
+    }
+}
+
+function getPreparedStreamList() {
+    const sort = localStorage.getItem("sortBy") || "random"; // stuff like this I should make global constants
+    const order = localStorage.getItem("orderBy") || "asc";
+
+    return streamList.toSorted(getSortingFunction(sort, order));
+}
+
+function buildStreamListing() {
+    document.getElementById("streams-container").innerHTML = "";
+    const preparedStreamList = getPreparedStreamList();
+
+    preparedStreamList.forEach(s => {
+        const streamEl = createStreamElement(s);
+        document.getElementById("streams-container").appendChild(streamEl);
+    });
+}
+
+function prepareSettings() {
+    document.getElementById("settings-toggle").style.display = "block";
+
+    const sortEl = document.getElementById("sort-dropdown");
+    const orderContainer = document.getElementById("order-settings-container");
+    const orderForm = document.getElementById("order-form");
+
+    sortEl.value = localStorage.getItem("sortBy") || "random";
+    if(sortEl.value === "random") {
+        orderContainer.style.display = "none";
+    }
+    sortEl.addEventListener("change", (e) => {
+        localStorage.setItem("sortBy", e.target.value);
+        if(e.target.value === "random") {
+            orderContainer.style.display = "none";
+        } else {
+            orderContainer.style.display = "block";
+        }
+        buildStreamListing();
+    });
+
+    orderForm.addEventListener("change", (e) => {
+        localStorage.setItem("orderBy", e.target.value);
+        buildStreamListing();
+    });
 }
 
 /*
@@ -136,12 +193,9 @@ window.onload = async () => {
     document.getElementById("streams-container").textContent = "";
     const token = await handleTokenLogic();
     if (token) {
-        const streamList = await fetchStreams(token);
-        streamList.sort((a, b) => Math.random()-0.5);
-        streamList.forEach(s => {
-            const streamEl = createStreamElement(s);
-            document.getElementById("streams-container").appendChild(streamEl);
-        });
+        prepareSettings();
+        streamList = await fetchStreams(token);
+        buildStreamListing();
     } else {
         serveTwitchAuthURL();
     }
