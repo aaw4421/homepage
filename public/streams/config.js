@@ -178,6 +178,14 @@ export const CHANNEL_LIST = [
     "kirukuro",
     "mk64mr",
     "jaquarium",
+    "laff4",
+    "minimini352",
+    "ketsumomo_",
+    "poka_rta",
+    "maibarta",
+    "ryoma2744",
+    "schneeheideww",
+    "tama_rta",
 ];
 
 // Community channels, events, marathons, 24/7 channels, etc.

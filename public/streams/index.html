@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
-    <head>
+    <head prefix="og: http://ogp.me/ns#">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="Live Speedrunning Streams" />
+        <meta property="og:description" content="Live Twitch streams, curated to include only speedrunning channels." />
+        <meta property="og:url" content="https://bluecrystal.me/streams/" />
+        <meta property="og:locale" content="en_US" />
         <title>Speedrun Streams</title>
         <link rel="stylesheet" href="/styles/common.css">
         <link rel="stylesheet" href="/styles/streams.css">
@@ -32,7 +36,6 @@
             <div id="under-header">
                 <div id="explanation" class="under-header">
                     a listing of live Twitch streams, curated by me to include only people who primarily do speedruns
-                    <br>streams are sorted totally randomly by default! but more features coming soon
                 </div>
                 <p id="settings-toggle" class="under-header" onclick="toggleSettingsVisibility()">Show Settings</p>
                 <div id="settings-panel" style="display: none;">
