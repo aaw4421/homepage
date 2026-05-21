@@ -12,8 +12,6 @@ body {
   color: white;
   font-family: "MS PGothic", sans-serif;
   padding-left: calc(100vw - 100%); /* https://stackoverflow.com/a/30293718 */
-
-  anchor-name: --body-anchor;
 }
 
 #title {

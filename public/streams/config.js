@@ -239,6 +239,12 @@ export const CHANNEL_LIST = [
     "blackout_rta",
     "dr_otto9",
     "timmon_",
+    "jeezhs",
+    "seadan",
+    "satokoaddict96",
+    "sazan_139",
+    "r_chitose",
+    "ericdacleric",
 ];
 
 // Community channels, events, marathons, 24/7 channels, etc.
