@@ -3,7 +3,6 @@ export const CLIENT_ID = "jwe3s3ijpnl35ji1t55xc0ddceqwa0";
 // TODO: should be using User IDs
 // Not to mention a very incomplete list!
 export const CHANNEL_LIST = [
-    "bingothon",
     "siirzax",
     "alicehk8",
     "phantom5800",
@@ -249,6 +248,7 @@ export const CHANNEL_LIST = [
 
 // Community channels, events, marathons, 24/7 channels, etc.
 export const SPECIAL_CHANNELS = [
+    "bingothon",
     "gamesdonequick",
     "speedrun",
     "ootv",

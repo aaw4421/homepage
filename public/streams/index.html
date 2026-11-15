@@ -27,40 +27,41 @@
         </script>
     </head>
     <body>
-        <div id="page">
-            <div id="header">
-                <h1 id="title">curated speedrunning streams</h1>
-                <ul id="navbar"><!--# include file="~/includes/navbar.html" --></ul>
-            </div>
+        <div id="header">
+            <h1 id="title">speedrun streams</h1>
+            <ul id="navbar"><!--# include file="~/includes/navbar.html" --></ul>
+        </div>
 
-            <div id="under-header">
-                <div id="explanation" class="under-header">
-                    a listing of live Twitch streams, curated by me to include only people who primarily do speedruns
-                </div>
-                <p id="settings-toggle" class="under-header" onclick="toggleSettingsVisibility()">Show Settings</p>
-                <div id="settings-panel" style="display: none;">
-                    <div id="sort-settings-container">
-                        <label for="sort-dropdown">Sort by:</label>
-                        <select id="sort-dropdown" name="sort">
-                            <option value="random">Random</option>
-                            <option value="viewers">Viewers</option>
-                            <option value="channel">Channel name</option>
-                            <option value="game">Game name</option>
-                            <option value="language">Language</option>
-                        </select>
+        <div id="content">
+            <div id="main-content" class="panel">
+                <div id="under-header">
+                    <div id="explanation" class="under-header">
+                        a listing of live Twitch streams, curated by me to include only people who primarily do speedruns
                     </div>
-                    <div id="order-settings-container">
-                        <form id="order-form" name="order">
-                            <label for="order">Order:</label>
-                            <input id="order-asc-radio" name="order" type="radio" value="asc" checked>Ascending</input>
-                            <input id="order-desc-radio"name="order" type="radio" value="desc">Descending</input>
-                        </form>
+                    <p id="settings-toggle" class="under-header" onclick="toggleSettingsVisibility()">Show Settings</p>
+                    <div id="settings-panel" style="display: none;">
+                        <div id="sort-settings-container">
+                            <label for="sort-dropdown">Sort by:</label>
+                            <select id="sort-dropdown" name="sort">
+                                <option value="random">Random</option>
+                                <option value="viewers">Viewers</option>
+                                <option value="channel">Channel name</option>
+                                <option value="game">Game name</option>
+                                <option value="language">Language</option>
+                            </select>
+                        </div>
+                        <div id="order-settings-container">
+                            <form id="order-form" name="order">
+                                <label for="order">Order:</label>
+                                <input id="order-asc-radio" name="order" type="radio" value="asc" checked>Ascending</input>
+                                <input id="order-desc-radio"name="order" type="radio" value="desc">Descending</input>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div id="content">
-                <div id="streams-container"><noscript>sorry, it requires javascript...</noscript></div>
+                <div id="main-content-body">
+                    <div id="streams-container"><noscript>sorry, it requires javascript...</noscript></div>
+                </div>
             </div>
         </div>
     </body>

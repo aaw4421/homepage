@@ -1,3 +1,5 @@
+// Checks for duplicate channels in my list of speedrun streams
+
 import { CHANNEL_LIST } from "./public/streams/config.js";
 
 // lmfao just copied from https://www.geeksforgeeks.org/javascript/javascript-program-to-find-duplicate-elements-in-an-array/

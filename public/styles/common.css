@@ -1,53 +1,79 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  /* MAGIC NUMBERS */
+  --font-size: 16px;
+  --radius: 6px;
+  --page-max-width: 1150px;
+  --main-panel-width: 686px;
+
+  /* COLORS */
+  --border: white;
+  --bg-color: #0e0e24;
+  --text-color: white;
+  --panel-soft: linear-gradient(to bottom, #0b1027d0, rgba(0, 0, 0, 0.555));
+  --panel-dark: black;
+}
 
 html {
-  font-size: 17px;
+  font-size: var(--font-size);
+  background-color: var(--bg-color);
+  background-image: url("/assets/rooftop.png");
+  background-position: top center;
 }
 
 body {
-  background-color: black;
-  background-image: url("/assets/stars.gif");
-  width: min(100%, 850px);
+  width: min(100%, var(--page-max-width));
   margin: auto;
-  color: white;
-  font-family: "MS PGothic", sans-serif;
+  color: var(--text-color);
+  font-family: "Open Sans", sans-serif;
   padding-left: calc(100vw - 100%); /* https://stackoverflow.com/a/30293718 */
 }
 
 #title {
   text-align: center;
+  font-size: 3.5rem;
+  font-weight: 800;
   margin: 0;
   padding-top: 20px;
   padding-left: 12px;
   padding-right: 12px;
 }
-
-#page {
-  background-color: rgba(0, 0, 0, 0.85);
-  border: white 1px solid;
-  position: relative;
-  top: 40px;
-  min-height: 600px;
-  margin-bottom: 80px;
+h1 {
+  font-size: 2.5rem;
 }
 
-@media screen and (max-width: 850px) {
-  #page {
-    top: 0px;
-    border: none;
-    border-bottom: white 1px solid;
-    margin-bottom: 0px;
-  } body {
-    padding: 0px;
-  }
-} @media screen and (max-width: 420px) {
-  html {
-    font-size: 16px;
-  }
+#content {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  place-items: flex-start center;
+  gap: 16px;
+}
+
+.panel {
+  background: var(--panel-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  position: relative;
+  top: 16px;
+  flex: 1 1;
+
+  min-height: 240px;
+  max-width: 215px;
+}
+#main-content {
+  margin-bottom: 80px;
+  flex: 3 3;
+  max-width: var(--main-panel-width);
+  text-align: center;
+}
+#main-content-body {
+  padding: 5px 24px;
 }
 
 #header {
-  border-bottom: 1px gray dashed;
   padding: 0px 2px;
 }
 
@@ -64,6 +90,9 @@ footer {
   align-items: center;
   justify-content: space-evenly;
   min-height: 80px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-top: 40px;
   border-top: 1px gray dashed;
   color: gray;
   font-size: 12px;
@@ -85,23 +114,11 @@ a.osu-nav {
   list-style-type: none;
 }
 
-#navbar>li {
+#navbar > li {
   display: inline;
 }
-
-#content {
-  padding: 5px 24px;
-  text-align: center;
-}
-
-#footer {
-  color: gray;
-  font-size: 0.6rem;
-  text-align: center;
-  width: 100%;
-  position: absolute;
-  bottom: 0px;
-  border-top: 1px gray dashed;
+#navbar > li > a {
+  margin: auto 10px;
 }
 
 *[onclick]:hover {
@@ -109,7 +126,7 @@ a.osu-nav {
 }
 
 .gray-indent {
-  border-left: 2px rgba(64, 64, 64, 0.75) dashed;
+  border-left: 4px rgba(64, 64, 64, 0.75) solid;
   padding-left: 25px;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -117,4 +134,26 @@ a.osu-nav {
 
 .center-text {
   text-align: center;
+}
+
+
+@media screen and (max-width: 686px) {
+  #main-content, .panel {
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 0px;
+    margin-bottom: 0px;
+  }
+  body {
+    padding: 0px;
+  }
+}
+@media screen and (max-width: 420px) {
+  html {
+    font-size: 90%;
+  }
+  #title {
+    font-size: 2.5rem;
+  }
 }

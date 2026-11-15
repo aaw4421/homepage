@@ -7,17 +7,19 @@
     <link href="/styles/common.css" rel="stylesheet" type="text/css" media="all">
   </head>
   <body>
-    <div id="page">
-      <div id="header">
-        <h1 id="title">404 not found</h1>
-        <ul id="navbar"><!--# include file="~/includes/navbar.html" --></ul>
-      </div>
-
-      <div id="content">
-        <p style="text-align:center">not really sure what you were looking for, but it's not here. sorry.</p>
-      </div>
-
-      <!--# include file="~/includes/footer.html" -->
+    <div id="header">
+      <h1 id="title">404 not found</h1>
+      <ul id="navbar"><!--# include file="~/includes/navbar.html" --></ul>
     </div>
-  </body>
+
+    <div id="content">
+      <div id="main-content" class="panel">
+        <div id="main-content-body">
+          <p style="text-align:center">not really sure what you were looking for, but it's not here. sorry.</p>
+        </div>
+
+        <!--# include file="~/includes/footer.html" -->
+      </div>
+    </div>
+</body>
 </html>
